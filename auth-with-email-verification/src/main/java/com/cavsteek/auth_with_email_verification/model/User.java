@@ -1,8 +1,7 @@
-package com.cavsteek.auth_with_email_verification.Entity;
+package com.cavsteek.auth_with_email_verification.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
