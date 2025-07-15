@@ -1,6 +1,6 @@
 package com.cavsteek.auth_with_email_verification.config;
 
-import com.cavsteek.auth_with_email_verification.JwtImpl.JwtService;
+import com.cavsteek.auth_with_email_verification.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,4 +1,4 @@
-package com.cavsteek.auth_with_email_verification.JwtImpl;
+package com.cavsteek.auth_with_email_verification.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
