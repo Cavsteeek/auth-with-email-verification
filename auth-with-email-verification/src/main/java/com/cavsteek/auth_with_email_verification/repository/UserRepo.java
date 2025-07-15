@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.OptionalInt;
 
 @Repository
-public interface UserRepo extends CrudRepository<User, Long> {
+public interface UserRepo extends JpaRepository<User, Long> {
     Optional<User> findByEmail (String email);
     Optional<User> findByVerificationCode(String verificationCode);
 }
