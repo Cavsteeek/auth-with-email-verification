@@ -1,7 +1,9 @@
 package com.cavsteek.auth_with_email_verification.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +16,6 @@ import java.util.List;
 @Table(name = "users")
 @Getter
 @Setter
-//@RequiredArgsConstructor
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,10 +33,17 @@ public class User implements UserDetails {
     private boolean enabled;
 
     @Column(name = "verification_code")
-    private String verification_code;
+    private String verificationCode;
 
     @Column(name = "verification_expiration")
-    private LocalDateTime verification_expiration;
+    private LocalDateTime verificationCodeExpiresAt;
+
+    //constructor for creating an unverified user
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
